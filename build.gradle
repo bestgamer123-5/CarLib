@@ -40,6 +40,24 @@ tasks.withType(JavaCompile).configureEach {
     it.options.release = 21
 }
 
+tasks.named('jar') {
+    from(sourceSets.main.output)
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+def fabricJarFile = layout.buildDirectory.file("libs/${project.archives_base_name}-${project.version}.jar")
+
+tasks.register('copyFabricJar', Copy) {
+    dependsOn(tasks.named('jar'))
+    from(tasks.named('jar').map { it.archiveFile })
+    into(layout.buildDirectory.dir('libs'))
+    rename { fabricJarFile.get().asFile.name }
+}
+
+tasks.named('build') {
+    dependsOn(tasks.named('copyFabricJar'))
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
