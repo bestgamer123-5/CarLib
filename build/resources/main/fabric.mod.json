@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "carlib",
+  "version": "0.1.0",
+  "name": "CarLib",
+  "description": "A Fabric integration library for car-related and cross-mod APIs.",
+  "authors": [
+    "CarLib Team"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.carlib.internal.CarLibMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}
