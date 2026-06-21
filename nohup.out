@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/munu/Desktop/aaa/advanced_infostealer.py", line 17, in <module>
+    from flask import Flask, render_template_string, request, jsonify
+ModuleNotFoundError: No module named 'flask'
