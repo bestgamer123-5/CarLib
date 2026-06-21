@@ -50,10 +50,10 @@ Use `ConfigManager` to register codecs, auto-create configs, load, and save:
 ```java
 @Override
 public void onInitialize() {
-    CarLibApi.registerProvider(new ExampleProvider());
-    CarCombatApi.registerMovementController(new ExampleMovementController());
-    CarCombatApi.registerWeaponController(new ExampleWeaponController());
-    UiApi.registerHudOverlay(new ExampleHudOverlay());
+    CarLibApi.registerProvider(new GarageProvider());
+    CarCombatApi.registerMovementController(new GarageMovementController());
+    CarCombatApi.registerWeaponController(new GarageWeaponController());
+    UiApi.registerHudOverlay(new GarageHudOverlay());
 }
 ```
 
@@ -76,7 +76,7 @@ UiApi.registerTheme(new UiTheme("dark", 0x222222, 0x5e81ac, 0xffffff));
 UiApi.setActiveTheme("dark");
 UiApi.registerScreen(new GuiScreen() {
     @Override
-    public String id() { return "example:garage"; }
+    public String id() { return "carlib:garage"; }
 
     @Override
     public String title() { return "Garage"; }
