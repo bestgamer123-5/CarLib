@@ -10,3 +10,7 @@ pluginManagement {
 }
 
 rootProject.name = 'carlib'
+if (org.gradle.util.GradleVersion.current() < org.gradle.util.GradleVersion.version('9.5.0')) {
+    throw new GradleException("CarLib's Fabric 26.1.2 toolchain requires Gradle 9.5.0 or newer. Run ./gradlew --stop, make sure gradle/wrapper/gradle-wrapper.properties points to gradle-9.5.0-bin.zip, then run ./gradlew build again.")
+}
+
